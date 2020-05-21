@@ -1,0 +1,104 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <title>TEMPS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+  <link rel="icon" type="image/png" href="/static/logo.png" />
+  <style>
+    body {
+      background: url(https://etseib.upc.edu/es/shared/ims/lescola/etseib-des-de-csic.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="w3-row w3-border">
+    <div class="w3-container w3-half">
+      <h1></h1><img src="static/titol.png" width="300" height="100">
+    </div>
+  </div>
+
+  </div>
+  <div class="w3-row w3-border">
+    <div class="w3-container w3-half">
+      <br>
+      <h3>Introdueix les notes:</h3>
+
+      <form action="/calculs" method="post" target='resposta'>
+
+        <table class="w3-table w3-table-all w3-small">
+          <tr>
+            <td>Àlgebra Lineal: </td>
+            <td><input size="5" onkeypress="return justNumbers(event);" name="AL" id="AL"></td>
+          </tr>
+          <tr>
+            <td>Càlcul I: </td>
+            <td><input size="5" onkeypress="return justNumbers(event);" name="C1" id="C1"></td>
+          </tr>
+          <tr>
+            <td>Fonaments d'Informàtica: </td>
+            <td><input size="5" onkeypress="return justNumbers(event);" name="FI" id="FI"></td>
+          </tr>
+          <tr>
+            <td>Química I: </td>
+            <td><input size="5" onkeypress="return justNumbers(event);" name="Q1" id="Q1"></td>
+          </tr>
+          <tr>
+            <td>Mecànica Fonamental: </td>
+            <td><input size="5" onkeypress="return justNumbers(event);" name="MF" id="MF"></td>
+          </tr>
+          <tr>
+            <td>Termodinàmica Fonamental:</td>
+            <td><input size="5" onkeypress="return justNumbers(event);" name="TF" id="TF"></td>
+          </tr>
+          <tr>
+            <td>Química II: </td>
+            <td><input size="5" onkeypress="return justNumbers(event);" name="Q2" id="Q2"></td>
+          </tr>
+          <tr>
+            <td>Càlcul II: </td>
+            <td><input size="5" onkeypress="return justNumbers(event);" name="C2" id="C2"></td>
+          </tr>
+          <tr>
+            <td>Expressió Gràfica: </td>
+            <td><input size="5" onkeypress="return justNumbers(event);" name="EG" id="EG"></td>
+          </tr>
+          <tr>
+            <td>Geometria: </td>
+            <td><input size="5" onkeypress="return justNumbers(event);" name="GEO" id="GEO"></td>
+          </tr>
+        </table>
+        <center>
+          <input type="submit" value="Calcular" style="background:rgb(64, 92, 185)">
+        </center>
+      </form>
+    </div>
+    <div id="eliframe" class="w3-container w3-half">
+      <iframe id="respostaf" name="resposta" frameborder="0" marginheight="0" marginwidth="0" width="100%"></iframe>
+
+      <!-- el que hi ha a continuació és per ajustar el tamany de la pàgina al iframe -->
+      <script>
+        var iframe = document.getElementById("respostaf");
+        iframe.onload = function () {
+          iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+        }
+      </script>
+    </div>
+  </div>
+  <div>
+    <p style="color: rgb(255, 255, 255);">
+      En el formulari cal introduir totes les notes de la fase inicial de la primera convocatòria. El valor obtingut està calculat a partir del mètode estadística Knn i correspon al número de quadrimestres que trigaràs a acabar el grau. 
+    </p>
+  </div>
+</body>
+
+</html>
